@@ -1,0 +1,4 @@
+baseURL = "https://neopg.io/"
+languageCode = "en-us"
+title = "NeoPG"
+theme = "neopg"

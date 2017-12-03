@@ -1,0 +1,3 @@
+[submodule "themes/neopg"]
+	path = themes/neopg
+	url = https://github.com/neopg-io/neopg-theme.git
