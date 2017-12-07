@@ -1,5 +1,5 @@
 ---
-title: "Build System"
+title: "Why CMake is better than Autoconf for NeoPG"
 date: 2017-12-01
 lastmod: 2017-12-06
 menu:
