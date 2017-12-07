@@ -1,4 +1,42 @@
 baseURL = "https://neopg.io/"
 languageCode = "en-us"
 title = "NeoPG"
+subtitle = "A multiversal crypto engine."
 theme = "neopg"
+
+FootnoteReturnLinkContents = "↩"
+
+[params]
+    twitter = "neopg_"
+    gitter = "das-labor/neopg"
+    github = "das-labor/neopg"
+    bountysource = "neopg"
+    patreon = "neopg"
+
+[[menu.main]]
+    name = "NeoPG"
+    pre = "<i class='home icon'></i>"
+    icon = "home"
+    weight = -110
+    identifier = "home"
+    url = "/"
+[[menu.main]]
+    name = "Blog"
+    pre = "<i class='signup icon'></i>"
+    weight = -100
+    url = "/blog/"
+#[[menu.main]]
+#    name = "Documentation"
+#    pre = "<i class='book icon'></i>"
+#    weight = -90
+#    url = "/doc/"
+#[[menu.main]]
+#    name = "Development"
+#    pre = "<i class='code icon'></i>"
+#    weight = -80
+#    url = "/dev/"
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
