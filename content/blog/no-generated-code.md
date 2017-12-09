@@ -4,7 +4,7 @@ date: 2017-12-09
 menu:
   main:
     parent: Blog
-tags: legacy
+tags: [legacy]
 ---
 
 Generated code should be avoided.  This article explains why.

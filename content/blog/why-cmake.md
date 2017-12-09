@@ -5,7 +5,7 @@ lastmod: 2017-12-08
 menu:
   main:
     parent: Blog
-tags: legacy
+tags: [legacy]
 ---
 
 NeoPG uses CMake instead of Autoconf.  This article explains why.

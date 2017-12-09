@@ -4,7 +4,7 @@ date: 2017-12-07
 menu:
   main:
     parent: Blog
-tags: legacy
+tags: [legacy]
 ---
 
 NeoPG combines all code in a single repository, while GnuPG uses many
