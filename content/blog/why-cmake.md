@@ -1,10 +1,11 @@
 ---
 title: "Why CMake is better than Autoconf for NeoPG"
 date: 2017-12-01
-lastmod: 2017-12-06
+lastmod: 2017-12-08
 menu:
   main:
     parent: Blog
+tags: legacy
 ---
 
 NeoPG uses CMake instead of Autoconf.  This article explains why.
@@ -42,6 +43,11 @@ cross-compilation was not well supported by pkg-config.  From the
 documentation, its cross-compilation support is still not great, and
 relies on a wrapper script.  But there are many pkg-config users, so
 it doesn't make sense anymore to not follow the mainstream here.
+
+Update (2017-12-08): pkg-config also is important on multi-arch
+configurations, which is not supported well with the homegrown config
+scripts in GnuPG, see [Debian
+#643341](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=643341).
 
 ## Target Configuration
 
