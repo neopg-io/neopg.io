@@ -5,9 +5,9 @@ title: NeoPG
   <div class="ui middle aligned stackable grid container">
     <div class="row">
       <div class="eight wide column">	
-	<h3>NeoPG is a modern replacement for GnuPG</h3>
+	<h3>NeoPG is a modern replacement for GnuPG 2</h3>
 	
-	<p>NeoPG starts as an opiniated fork of GnuPG to <b>clean up the code</b> and
+	<p>NeoPG starts as an opiniated fork of GnuPG 2 to <b>clean up the code</b> and
 	make it <b>easier to develop</b>.</p>
 	
 	<p>We want to provide a <b>stable and extensible API</b> for application
