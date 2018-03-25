@@ -28,7 +28,7 @@ But sometimes, no libraries exist, and the programmer has to implement
 the parsing themselves.  For example, command line parsers usually
 only understand numeric or string arguments, and other restrictions
 have to be implemented manually.  A large software suite can have
-dozens or hundreds of such coincidential parsers.  And of course, for
+dozens or hundreds of such coincidental parsers.  And of course, for
 software that implements the OpenPGP standard, implementing a parser
 for OpenPGP data formats is a core responsibility.
 
@@ -39,11 +39,11 @@ here, but here are some notable examples:
 
 * Of course, GnuPG contains an OpenPGP parser.  A lot of it is
   contained in the file `g10/parse-packet.c`, but `common/iobuf.c`
-  also plays an important part.  Overall, the details of parsing
+  also plays an important role.  Overall, the details of parsing
   OpenPGP is strewn all over the GnuPG source code.
 * Because this main OpenPGP parser in GnuPG is not designed to be
-  reusable, GnuPG contains __another__ specialized OpenPGP parser just
-  for the key database in `kbx/keybox-openpgp.c`.
+  reusable, GnuPG contains _another_ specialized OpenPGP parser just
+  for keys in local keyrings in `kbx/keybox-openpgp.c`.
 * Of course, GnuPG also has parsers for its configuration files, its
   key databases, and other support files.
 * GnuPG did use `libcurl` in the past, but replaced it with a
@@ -51,18 +51,19 @@ here, but here are some notable examples:
   time.  It also includes its own DNS client library, three URL
   parser, and a custom argument line parser.
 * GnuPG-related processes communicate over a line-based text protocol
-  implemented in `libassuan`.  `libassuan` supports parsing this text
-  protocol, but deserialization of the content of the protocol data
-  requires many little parser all throughout the code base.
+  implemented in `libassuan`.  The library supports parsing of the 
+  transports in this text protocol, but deserialization of the
+  exchanged information requires many little parser all throughout the
+  code base.
 
-All these parsers are hand-written C code, with whatever standard
-functions that seem locally appropriate (`strtok`, `strlen`, `strchr`,
-and so on).  Offsets and lengths values are often calculated manually.
-There is only one formal grammar in the GnuPG code base, and that is
-for the ASN.1 parser in `libksba` (which is why it is not included in
-the above list).  Here is a typical example from the `GET_PASSPHRASE`
-command in the Assuan protocol of `gpg-agent`, which takes four
-white-space separated arguments:
+All these parsers are hand-written C code, implemented with whatever
+standard functions seem locally appropriate (`strtok`, `strlen`,
+`strchr`, and so on).  Offsets and lengths values are often calculated
+manually.  There is only one formal grammar in the GnuPG code base,
+and that is for the ASN.1 parser in `libksba` (which is why it is not
+included in the above list).  Here is a typical example from the
+`GET_PASSPHRASE` command in the Assuan protocol of `gpg-agent`, which
+takes four white-space separated arguments:
 
 ```
   cacheid = line;
@@ -116,12 +117,14 @@ formal grammar is provided along with the ad-hoc parser (which is
 usually not the case), it is just as hard to show that the ad-hoc
 parser actually implements that grammar.  With two ad-hoc parsers for
 the same language, we can not easily understand if they actually
-agree.  There are three URL parsers in GnuPG.  Do they treat a [domain
-name like `brave.com%60x.code-fu.org`](brave.com%60x.code-fu.org) in
+agree.  There are three URL parsers in GnuPG.  Do they treat a domain
+name like [`brave.com%60x.code-fu.org`](https://github.com/nodejs/node/issues/19468) in
 the same way?  There are two OpenPGP parsers in GnuPG.  Will they
 treat public keys downloaded from a keyserver in the same way?
 
-The fine people from [LANGSEC](http://langsec.org/) explain it this way:
+The fine people from [LANGSEC](http://langsec.org/) explain it this
+way (Kudos to [Kai Michael](https://panopticon.re/me/) for pointing
+this out to me):
 
 > "When input handling is done in ad hoc way, the de facto recognizer,
 > i.e. the input recognition and validation code ends up scattered
@@ -141,7 +144,7 @@ They make this recommendation:
 > and the respective input-handling routines as a recognizer for that
 > language."
 
-This is what NeoPG aims to do.
+This is precisely what NeoPG aims to do.
 
 ## Parsing in NeoPG
 
@@ -151,9 +154,9 @@ abstractions, or we use formal grammars to process untrusted input.
 
 Here are some examples for responsibility delegation:
 
-* NeoPG uses `CLI11` for command line parsing.  The parser in CLI11
-  qualifies as an ad-hoc parser, but it is behind an abstract library
-  interface.
+* NeoPG uses `CLI11` for command line parsing.  The parser in `CLI11`
+  certainly qualifies as an ad-hoc parser, but it is hidden behind an
+  abstract library interface.
 * We also use `libcurl`, which probably contains several ad-hoc
   parsers, again hidden behind an abstract library interface.
 * We also use Botan for certificates and TLS.  Again, the parsers in
@@ -176,11 +179,11 @@ However, NeoPG has also its own parsers:
   progress](https://github.com/das-labor/neopg/pull/60)).
 
 These parsers are not ad-hoc parsers, but generated based on a formal
-grammar using the excellent template library
-[PEGTL](https://github.com/taocpp/PEGTL).  For example, the [grammar
-for an URL in
-PEGTL](https://github.com/taocpp/PEGTL/blob/master/include/tao/pegtl/contrib/uri.hpp)
-is lifted straight from
+grammars using the excellent template library
+[PEGTL](https://github.com/taocpp/PEGTL).  For example, the grammar
+for an
+[URL](https://github.com/taocpp/PEGTL/blob/master/include/tao/pegtl/contrib/uri.hpp)
+in PEGTL         is lifted straight from
 [RFC3986](https://www.ietf.org/rfc/rfc3986.txt), while there is no
 corresponding expression of the _intent_ in
 [GnuPG](https://dev.gnupg.org/source/gnupg/browse/master/dirmngr/http.c;fa0ed1c7e2eee7c559026696e6b21acc882a97aa$1282).
@@ -190,14 +193,14 @@ before the host.
 From RFC3986:
 
 
-```
+```BNF
       userinfo    = *( unreserved / pct-encoded / sub-delims / ":" )
       authority   = [ userinfo "@" ] host [ ":" port ]
 ```
 
 PEGTL grammar (simplified, and without backtrack handling):
 
-```
+```C++
 struct userinfo : star< sor< unreserved, pct_encoded, sub_delims, one< ':' > > > {};
 struct authority : seq< opt< userinfo, one< '@' > >, host, opt< one< ':' >, port > > {};
 
@@ -211,14 +214,14 @@ template <>
 struct action<pegtl::uri::port> : bind<&URI::port> {};
 
 void URI::parse {
-  pegtl::parse<uri::grammar, uri::action>(input, *this);
+  pegtl::parse<uri::authority, uri::action>(input, *this);
 }
 
 ```
 
 GnuPG source code:
 
-```
+```C
 /* Check for username/password encoding */
 if ((p3 = strchr (p, '@'))) {
     uri->auth = p;
@@ -245,10 +248,10 @@ if ((p3 = strchr (p, ':'))) {
 }
 ```
 
-In GnuPG, semantic actions are mixed with the parser, and the
-underlying formal grammar is barely recognizable.  It is hard to
-extract the intent of the source code, and it is also hard to verify
-its correctness.
+In GnuPG, semantic actions (`tolower`, `atoi`) are mixed with the
+parser, and the underlying formal grammar is barely recognizable.  It
+is hard to extract the intent of the source code, and it is also hard
+to verify its correctness.
 
 In contrast, the PEGTL approach separates the recognition of the input
 from the semantic actions.  This makes it easier to reason about the
@@ -295,7 +298,7 @@ stream and store it in an `enum` variable.  This seems excessively
 complicated compared to the corresponding code in GnuPG
 (`g10/parse-packet.c::parse_key`):
 
-```
+```C
 int parse_key (IOBUF inp, int pkttype, unsigned long pktlen, ...)
 {
   int version = iobuf_get_noeof (inp);
@@ -313,7 +316,7 @@ is the header of the next packet.  This is a boundary violation that
 keeping track of `pktlen` is supposed to prevent.  In turn, `pktlen`
 will underflow, and, because it is an unsigned long value, it will be
 set to `2^64-1`.  A following sanity check will cause GnuPG to bail
-out and read the rest of the input stream (trying to skip 2^64-1 bytes
+out and read the rest of the input stream (trying to skip `2^64-1` bytes
 of data, which it believes to be the length of the remaining data in
 the current packet).
 
@@ -329,7 +332,7 @@ attacks.  You can keep track of this bug upstream in
 
 The fix is simple, of course:
 
-```
+```C
   if (!pktlen)
     return GPG_ERR_INV_PACKET;
   int version = iobuf_get_noeof (inp);
@@ -340,7 +343,7 @@ But this needs to be done everywhere input is read.  Which is
 literally dozens of places for this parser alone, and which often
 requires counting the required input bytes manually:
 
-```
+```text
 $ grep pktlen parse-packet.c |grep if
 ...(snippet)...
 parse-packet.c:  if (pktlen != 3)
