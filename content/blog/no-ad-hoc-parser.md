@@ -49,11 +49,11 @@ here, but here are some notable examples:
 * GnuPG did use `libcurl` in the past, but replaced it with a
   hand-written, specialised HTTP parser in `dirmngr/http.c` at some
   time.  It also includes its own DNS client library, three URL
-  parser, and a custom argument line parser.
+  parsers, and a custom argument line parser.
 * GnuPG-related processes communicate over a line-based text protocol
   implemented in `libassuan`.  The library supports parsing of the 
   transports in this text protocol, but deserialization of the
-  exchanged information requires many little parser all throughout the
+  exchanged information requires many little parsers all throughout the
   code base.
 
 All these parsers are hand-written C code, implemented with whatever
@@ -123,7 +123,7 @@ the same way?  There are two OpenPGP parsers in GnuPG.  Will they
 treat public keys downloaded from a keyserver in the same way?
 
 The fine people from [LANGSEC](http://langsec.org/) explain it this
-way (Kudos to [Kai Michael](https://panopticon.re/me/) for pointing
+way (Kudos to [Kai Michaelis](https://panopticon.re/me/) for pointing
 this out to me):
 
 > "When input handling is done in ad hoc way, the de facto recognizer,
@@ -171,19 +171,19 @@ a simple risk and benefit analysis.
 However, NeoPG has also its own parsers:
 
 * NeoPG does have its own URL parser, because [`libcurl` does not
-  expose an interface the internal
+  expose an interface to the internal
   implementation](https://github.com/curl/curl/issues/2412).  The risk
   of two different URL parsers must be compensated with [extra
   testing](https://github.com/das-labor/neopg/issues/61).
 * Of course, NeoPG has a custom OpenPGP parser ([work in
   progress](https://github.com/das-labor/neopg/pull/60)).
 
-These parsers are not ad-hoc parsers, but generated based on a formal
+These parsers are not ad-hoc parsers, but generated based on formal
 grammars using the excellent template library
 [PEGTL](https://github.com/taocpp/PEGTL).  For example, the grammar
 for an
 [URL](https://github.com/taocpp/PEGTL/blob/master/include/tao/pegtl/contrib/uri.hpp)
-in PEGTL         is lifted straight from
+in PEGTL is lifted straight from
 [RFC3986](https://www.ietf.org/rfc/rfc3986.txt), while there is no
 corresponding expression of the _intent_ in
 [GnuPG](https://dev.gnupg.org/source/gnupg/browse/master/dirmngr/http.c;fa0ed1c7e2eee7c559026696e6b21acc882a97aa$1282).
@@ -198,7 +198,7 @@ From RFC3986:
       authority   = [ userinfo "@" ] host [ ":" port ]
 ```
 
-PEGTL grammar (simplified, and without backtrack handling):
+PEGTL grammar in NeoPG (slightly simplified without backtrack handling):
 
 ```C++
 struct userinfo : star< sor< unreserved, pct_encoded, sub_delims, one< ':' > > > {};
@@ -264,7 +264,7 @@ semantic actions to grammar rules.  Also, in the case of PEGTL,
 backtracking has to be handled manually (a design choice that
 maximizes the potential performance).  Given that a large scale
 software project can easily contain dozens of parsers and hundreds of
-grammar rules, this setup cost is quickly amorized.
+grammar rules, this setup cost quickly pays off.
 
 ## Really no ad-hoc parsing?
 
