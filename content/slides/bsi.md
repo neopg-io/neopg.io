@@ -93,7 +93,7 @@ message. I don't have a version of PGP that runs on any of my devices."
 ---
 
 <section>
-<img class="stretch" src="/images/serious-cryptography-cover.png">
+<img class="stretch" src="/images/serious-cryptography-cover.jpg">
 <!--Serious Cryptography (Jean-Philippe Aumasson, 2017)-->
 </section>
 
