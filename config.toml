@@ -30,11 +30,11 @@ FootnoteReturnLinkContents = "↩"
     pre = "<i class='google icon'></i>"
     weight = -90
     url = "/slides/"
-#[[menu.main]]
-#    name = "Documentation"
-#    pre = "<i class='book icon'></i>"
-#    weight = -90
-#    url = "/doc/"
+[[menu.main]]
+    name = "Docs"
+    pre = "<i class='book icon'></i>"
+    weight = -80
+    url = "/doc/"
 #[[menu.main]]
 #    name = "Development"
 #    pre = "<i class='code icon'></i>"
