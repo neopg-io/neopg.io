@@ -27,6 +27,7 @@ in this image is a total lie - the result of a willful manipulation of
 the message by the sender. Let's call this special message the *cake
 message*, or short: the *cake*.
 
+{{< load-photoswipe >}}
 {{< gallery >}}
 {{< figure link="/images/encryption-spoof/thunderbird.png" caption="Enigmail 2.0.4" >}}
 {{< figure link="/images/encryption-spoof/evolution.png" caption="Evolution 3.28.2" >}}
@@ -471,3 +472,9 @@ Again, you can check the content on the command line:
 cat 02-pgp-inline.gpg | gpg --list-packets
 cat 02-pgp-inline.gpg | gpg --status-fd=1 2> /dev/null > 02-status.log
 ```
+
+## Updates
+
+I reported this issue here:
+
+* [GnuPG](https://dev.gnupg.org/T4000)
