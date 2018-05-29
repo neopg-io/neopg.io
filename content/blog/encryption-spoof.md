@@ -480,3 +480,6 @@ cat 02-pgp-inline.gpg | gpg --status-fd=1 2> /dev/null > 02-status.log
 I reported this issue here:
 
 * [GnuPG](https://dev.gnupg.org/T4000)
+* [Mutt](https://gitlab.com/muttmua/mutt/issues/39)
+* [Evolution](https://gitlab.gnome.org/GNOME/evolution/issues/4)
+* [Enigmail](https://sourceforge.net/p/enigmail/bugs/854/)
