@@ -6,6 +6,11 @@ theme = "neopg"
 
 FootnoteReturnLinkContents = "↩"
 
+pygmentsStyle = "github"
+pygmentsUseClasses = true
+pygmentsCodefences = true
+#pygmentsCodeFencesGuessSyntax = true
+
 [params]
     twitter = "neopg_"
     gitter = "das-labor/neopg"

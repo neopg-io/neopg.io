@@ -65,7 +65,7 @@ included in the above list).  Here is a typical example from the
 `GET_PASSPHRASE` command in the Assuan protocol of `gpg-agent`, which
 takes four white-space separated arguments:
 
-```
+```c
   cacheid = line;
   p = strchr (cacheid, ' ');
   if (p)
@@ -193,7 +193,7 @@ before the host.
 From RFC3986:
 
 
-```BNF
+```abnf
       userinfo    = *( unreserved / pct-encoded / sub-delims / ":" )
       authority   = [ userinfo "@" ] host [ ":" port ]
 ```
@@ -273,7 +273,7 @@ example, a single byte?  Even in this case, NeoPG uses a formal
 grammar.  Here is how the version byte from an OpenPGP public key
 packet is parsed:
 
-```
+```c++
 struct version : must<any> {};
 
 template <typename Rule>
@@ -287,7 +287,7 @@ struct action<version> {
   }
 };
 
-...
+// ...
 
 PublicKeyData::Version version;
 pegtl::parse<version, action>(input, version);
@@ -343,7 +343,7 @@ But this needs to be done everywhere input is read.  Which is
 literally dozens of places for this parser alone, and which often
 requires counting the required input bytes manually:
 
-```text
+```
 $ grep pktlen parse-packet.c |grep if
 ...(snippet)...
 parse-packet.c:  if (pktlen != 3)

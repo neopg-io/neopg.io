@@ -18,7 +18,7 @@ This binary provides git-style subcommands (the current version does
 not support many commands yet, but the help output illustrated the
 concept):
 
-```sh
+```
 $ ./src/neopg --help
 NeoPG implements the OpenPGP standard.
 Usage: ./src/neopg [OPTIONS] [SUBCOMMAND]
