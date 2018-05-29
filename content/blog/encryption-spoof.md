@@ -12,6 +12,8 @@ encrypted in GnuPG and many email clients, but where the plaintext is
 actually not protected at all.
 <!--more-->
 
+*Thanks to Fabian Ising and Simon Friedberger for discussions!*
+
 Before I start, let's take a look at the problem.  The following image
 consists of screenshots of:
 
