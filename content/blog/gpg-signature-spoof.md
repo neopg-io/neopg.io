@@ -56,7 +56,7 @@ If you are a user:
 If you are a developer:
 
 * Add `--no-verbose` to all invocations of `gpg`.
-* Upgrade to [python-gnupg 0.4.3](http://gnupg.readthedocs.io/en/latest/)
+* Upgrade to [python-gnupg 0.4.3](https://groups.google.com/forum/#!topic/python-gnupg/2yAlj_F2S1g)
 
 <div class="ui info message">
 <p>
@@ -68,7 +68,7 @@ OpenPGP.
 NeoPG wants to provide a stable and extensible programming API to make
 it easier to implement OpenPGP support in applications
 securely. Currently, NeoPG is unfunded. If you like
-my work, you can find ways to support me at the bottom of the page.
+my work, you can find ways to support me at the bottom of the page!
 </p>
 </div>
 
@@ -395,7 +395,7 @@ not affected, and consider some mitigations if you are.</strong>
 
 ### For developers
 
-* Upgrade to [python-gnupg 0.4.3](http://gnupg.readthedocs.io/en/latest/)
+* Upgrade to [python-gnupg 0.4.3](https://groups.google.com/forum/#!topic/python-gnupg/2yAlj_F2S1g)
 * Call `gpg` with `--no-verbose` to disable the attack.
 * Use a dedicated pipe for `--status-fd`, and do not share it with
   `stderr`.
@@ -437,5 +437,16 @@ input sanitisation fixed after hacker
 spat*](https://www.theregister.co.uk/2018/06/12/gnupg_patched_to_thwart_exploit/)
 (Richard Chirgwin) "If you're a developer relying on GnuPG, check
 upstream for an update that plugs an input sanitisation bug."
+
+### 13 Jun 2018
+
+* **golem.de**: [*Signaturen fälschen mit
+    GnuPG*](https://www.golem.de/news/sigspoof-signaturen-faelschen-mit-gnupg-1806-134940.html)
+    (Hanno Böck) "Eine Sicherheitslücke im Zusammenspiel von GnuPG und
+    bestimmten Mailplugins erlaubt es unter bestimmten Umständen, die
+    Signaturprüfung auszutricksen. Der Grund: Auf GnuPG aufbauende
+    Tools und Mailplugins parsen die Ausgabe des Kommandozeilentools -
+    und in die lassen sich unter Umständen gültig aussehende
+    Statusnachrichten einschleusen."
 
 <div style="clear: both"></div>
