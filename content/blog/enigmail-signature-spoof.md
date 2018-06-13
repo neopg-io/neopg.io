@@ -84,10 +84,7 @@ This screenshot is from Enigmail 2.0.6, and apparently shows a message
 with a valid signature by Patrick Brunschwig. In reality, this message
 was signed and sent by us using a specially crafted key.
 
-{{< load-photoswipe >}}
-
 <a href="/images/enigmail-signature-spoof/enigmail.png"><img class="ui centered bordered image" src="/images/enigmail-signature-spoof/enigmail.png"></a>
-
 
 ## Method I: Signature Status Confusion
 
@@ -346,9 +343,9 @@ These are some ways to inject the key by email:
   attacker.
 
 {{< gallery >}}
-{{< figure link="/images/gpg-signature-spoof/import-key-01.png" caption="Import inline key" >}}
-{{< figure link="/images/gpg-signature-spoof/import-key-02.png" caption="Enigmail does not show the content before import" >}}
-{{< figure link="/images/gpg-signature-spoof/import-key-03.png" caption="Can you spot the evil user id?" >}}
+{{< figure link="/images/enigmail-signature-spoof/import-key-01.png" caption="Import inline key" >}}
+{{< figure link="/images/enigmail-signature-spoof/import-key-02.png" caption="Enigmail does not show the content before import" >}}
+{{< figure link="/images/enigmail-signature-spoof/import-key-03.png" caption="Can you spot the evil user id?" >}}
 {{< /gallery >}}
 
 * Sending the key as an attachment is less favorable for the attacker,
@@ -360,9 +357,9 @@ These are some ways to inject the key by email:
   screenshots.
 
 {{< gallery >}}
-{{< figure link="/images/gpg-signature-spoof/import-attached-01.png" caption="Import attached key" >}}
-{{< figure link="/images/gpg-signature-spoof/import-attached-02.png" caption="Enigmail shows the content, but dsiplays embedded newlines and does not show boundary" >}}
-{{< figure link="/images/gpg-signature-spoof/import-attached-03.png" caption="Does this look suspicious? But now the key is already imported!" >}}
+{{< figure link="/images/enigmail-signature-spoof/import-attached-01.png" caption="Import attached key" >}}
+{{< figure link="/images/enigmail-signature-spoof/import-attached-02.png" caption="Enigmail shows the content, but dsiplays embedded newlines and does not show boundary" >}}
+{{< figure link="/images/enigmail-signature-spoof/import-attached-03.png" caption="Does this look suspicious? But now the key is already imported!" >}}
 {{< /gallery >}}
 
 It is also possible that the victim can be tricked into importing the
@@ -407,7 +404,7 @@ nation states. Given the helpfulness of the community towards
 activists from non-democratic countries, a social engineering attack
 under an appropriate cover story might be possible.
 
-{{< figure link="/images/gpg-signature-spoof/keysigning-party.jpg" caption="A keysigning party at an international conference." >}}
+{{< figure link="/images/enigmail-signature-spoof/keysigning-party.jpg" caption="A keysigning party at an international conference." >}}
 
 Again, the goal here is to get the victim to sign a completely
 unrelated and innocuous key with a properly formed user id consisting
