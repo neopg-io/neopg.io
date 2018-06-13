@@ -51,7 +51,7 @@ If you are a user:
 * Do not use `gpg --verbose` on the command line.
 * Upgrade to [GnuPG 2.2.8](https://gnupg.org/) or [GnuPG 1.4.23](https://lists.gnupg.org/pipermail/gnupg-announce/2018q2/000425.html)
 * Upgrade to [Enigmail 2.0.7](https://sourceforge.net/p/enigmail/forum/announce/thread/b948279f/)
-* Upgrade to [GPGTools 2018.3](https://gpgtools.org/) <span style="color: red">(The release is currently delayed, but will be ready soon!)</span>
+* Upgrade to [GPGTools 2018.3](https://gpgtools.org/)
 
 If you are a developer:
 
