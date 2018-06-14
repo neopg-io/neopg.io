@@ -389,7 +389,7 @@ not affected, and consider some mitigations if you are.</strong>
 
 * Remove `verbose` from `gpg.conf`, if you have it.
 * Do not use `gpg --verbose` on the command line.
-* Upgrade to GnuPG 2.2.8.
+* Upgrade to [GnuPG 2.2.8](https://gnupg.org/) or [GnuPG 1.4.23](https://lists.gnupg.org/pipermail/gnupg-announce/2018q2/000425.html)
 * Upgrade to [Enigmail 2.0.7](https://www.enigmail.net/)
 * Upgrade to [GPGTools 2018.3](https://gpgtools.org/)
 
@@ -448,5 +448,21 @@ upstream for an update that plugs an input sanitisation bug."
     Tools und Mailplugins parsen die Ausgabe des Kommandozeilentools -
     und in die lassen sich unter Umständen gültig aussehende
     Statusnachrichten einschleusen."
+
+### 14 Jun 2018
+
+* **heise.de**: [*Enigmail und GPG Suite: Neue Mail-Plugin-Versionen
+    schließen
+    GnuPG-Lücke*](https://www.heise.de/security/meldung/Enigmail-und-GPG-Suite-Neue-Mail-Plugin-Versionen-schliessen-GnuPG-Luecke-4078685.html)
+    (Olivia von Westernhagen) "Als Reaktion auf die "SigSpoof"-Lücke
+    zum Umgehen von Signaturprüfungen gibt es neue abgesicherte
+    Plugin-Versionen für gleich zwei E-Mail-Programme."
+* **Ars Technica**: [*Decades-old PGP bug allowed hackers to spoof
+    just about anyone’s
+    signature*](https://arstechnica.com/information-technology/2018/06/decades-old-pgp-bug-allowed-hackers-to-spoof-just-about-anyones-signature/)
+    (Dan Goodin) "For their entire existence, some of the world’s most
+    widely used email encryption tools have been vulnerable to hacks
+    that allowed attackers to spoof the digital signature of just
+    about any person with a public key, a researcher said Wednesday."
 
 <div style="clear: both"></div>
