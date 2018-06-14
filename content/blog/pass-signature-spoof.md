@@ -372,7 +372,7 @@ automated processing of the result might not notice that.
 
 <img class="ui centered large bordered image" src="/images/pass-signature-spoof/pass-malleability.png">
 
-### Exfiltration via re-encryption
+### Exfiltration via malleability gadgets
 
 The attacker can also try to apply the malleability gadgets techniques
 of the [EFAIL](https://efail.de/) attack. Guessing the first 11 byte
