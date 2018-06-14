@@ -27,11 +27,11 @@ actually signed. And we show another way to spoof encryption, too.
 *This work would not have been possible without the collaboration with
 [Kai Michaelis](https://twitter.com/_cibo_) on
 [CVE-2012-12019](/blog/enigmail-signature-spoof/) at the Bochumer
-hacker space [Das Labor](https://www.das-labor.org/).  Fabian Ising
-from FH Münster verified the attack against GPGTools, [Simon
-Wörner](https://github.com/SWW13) helped with the CVE. Thanks also to
-all the other people who gave me guidance and support behind the
-scenes!*
+hacker space [Das Labor](https://www.das-labor.org/). [Fabian
+Ising](https://twitter.com/murgi) from FH Münster verified the attack
+against GPGTools, [Simon Wörner](https://github.com/SWW13) helped with
+the CVE. Thanks also to all the other people who gave me guidance and
+support behind the scenes!*
 
 ## tl;dr
 

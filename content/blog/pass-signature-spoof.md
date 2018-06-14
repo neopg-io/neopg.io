@@ -57,7 +57,7 @@ range of attacks.
 
 You can protect yourself:
 
-* Upgrade to [`pass` 1.7.2](https://lists.zx2c4.com/pipermail/password-store/2018-June/003309.html)[Jason's perspective on the issues](https://lists.zx2c4.com/pipermail/password-store/2018-June/003308.html)
+* Upgrade to [`pass` 1.7.2](https://lists.zx2c4.com/pipermail/password-store/2018-June/003309.html) (with a nice summary in the [security announcement](https://lists.zx2c4.com/pipermail/password-store/2018-June/003308.html))
 
 ### Identifiers
 
