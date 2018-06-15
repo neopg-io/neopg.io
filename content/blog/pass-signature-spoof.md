@@ -393,7 +393,7 @@ concerning, depending on the way you use `pass`.
 ### For `pass` developers
 
 * `pass` 1.7.2 uses hardened regular expressions, in particular requiring `[GNUPG:]`
-  to be at the beginning of a line (`^[GNUPG:]`).
+  to be at the beginning of a line (`^\[GNUPG:\]`).
 * `pass` 1.7.2 buffers the output of the GnuPG decryption, and does
   not output the plaintext in case of an error. This makes sure that
   no modified plaintext is processed in case of an integrity error

@@ -465,4 +465,13 @@ upstream for an update that plugs an input sanitisation bug."
     that allowed attackers to spoof the digital signature of just
     about any person with a public key, a researcher said Wednesday."
 
+### 15 Jun 2018
+
+* **Help Net Security**: [*Vulnerability in GnuPG allowed digital
+    signature spoofing for
+    decades*](https://www.helpnetsecurity.com/2018/06/15/cve-2018-12020-digital-signature-spoofing/)
+    (Zeljka Zorz) "A vulnerability affecting GnuPG has made some of
+    the widely used email encryption software vulnerable to digital
+    signature spoofing for many years."
+
 <div style="clear: both"></div>
