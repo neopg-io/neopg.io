@@ -64,6 +64,8 @@ You can protect yourself:
 This vulnerability is tracked under the following identifiers:
 
 * [CVE-2018-12356](https://www.cvedetails.com/cve/CVE-2018-12356)
+* [DFN-CERT-2018-1167](https://adv-archiv.dfn-cert.de/adv/2018-1167/)
+
 
 ## Scope of the attack
 

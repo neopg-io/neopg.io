@@ -77,12 +77,12 @@ my work, you can find ways to support me at the bottom of the page!
 This vulnerability is tracked under the following identifiers:
 
 * [CVE-2018-12020](https://www.cvedetails.com/cve/CVE-2018-12020)
-* [DFN-CERT 2018-1113](https://twitter.com/DFNCERT_ADV/status/1006093150098604032)
+* [DFN-CERT 2018-1113](https://adv-archiv.dfn-cert.de/adv/2018-1113/)
 
-Distributiuon updates for GnuPG:
+Distribution updates for GnuPG:
 
-* [DSA-4223-1](https://www.debian.org/security/2018/dsa-4223), [DSA-4224-1](https://www.debian.org/security/2018/dsa-4224) (Debian)
-* [USN-3675-1](https://usn.ubuntu.com/3675-1/) (Ubuntu)
+* [DSA-4222-1](https://www.debian.org/security/2018/dsa-4222), [DSA-4223-1](https://www.debian.org/security/2018/dsa-4223), [DSA-4224-1](https://www.debian.org/security/2018/dsa-4224) ([Debian](https://security-tracker.debian.org/tracker/CVE-2018-12019))
+* [USN-3675-1](https://usn.ubuntu.com/3675-1/), [USN-3675-2](https://usn.ubuntu.com/3675-2/) (Ubuntu)
 * [FEDORA-2018-3dc16842e2](https://bodhi.fedoraproject.org/updates/FEDORA-2018-3dc16842e2) (Fedora)
 * [Suse](https://www.suse.com/de-de/security/cve/CVE-2018-12020/)
 

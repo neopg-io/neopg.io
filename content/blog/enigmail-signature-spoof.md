@@ -78,6 +78,10 @@ This vulnerability is tracked under the following identifiers:
 
 * [CVE-2018-12019](https://www.cvedetails.com/cve/CVE-2018-12019)
 
+Distribution updates:
+
+* [Suse](https://www.suse.com/de-de/security/cve/CVE-2018-12020/)
+
 ## Demonstrating the signature spoof
 
 This screenshot is from Enigmail 2.0.6, and apparently shows a message
