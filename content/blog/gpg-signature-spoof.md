@@ -315,7 +315,7 @@ Settings](https://gist.github.com/anonymous/3d928a0bcbb3ed92c454) (via
 [Schneier's
 Blog](https://www.schneier.com/blog/archives/2013/09/my_new_gpgpgp_a.html#c6678382))
 and [Ben's
-IT-Kommentare](https://blog.bmarwell.de/gnupg/einstellungen-fur-gnupg/). Export
+IT-Kommentare](https://blog.bmarwell.de/gnupg/einstellungen-fur-gnupg/). Expert
 users might be interested in the additional details that `verbose`
 provides. And beginners might run into problems that require verbose
 to solve.
